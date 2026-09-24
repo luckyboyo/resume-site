@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { site } from "@/content/site";
 
 const entrance = {
-  hidden: { opacity: 0, y: 28, filter: "blur(7px)" },
+  hidden: { opacity: 0, y: 26, filter: "blur(7px)" },
   visible: { opacity: 1, y: 0, filter: "blur(0px)" },
 };
 
@@ -19,107 +19,146 @@ export function HeroSection() {
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const portraitY = useTransform(scrollYProgress, [0, 1], [0, 72]);
-  const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 0.96]);
+  const portraitY = useTransform(scrollYProgress, [0, 1], [0, 56]);
+  const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 0.97]);
 
   const initial = shouldReduceMotion ? false : "hidden";
   const animate = shouldReduceMotion ? undefined : "visible";
   const transition = (delay: number) => ({
-    duration: 0.82,
+    duration: 0.78,
     delay,
     ease: [0.22, 1, 0.36, 1] as const,
   });
 
   return (
     <section
-      className="relative flex min-h-[calc(100svh-4rem)] items-center overflow-hidden border-b border-slate-200/80 py-20 sm:py-28"
+      className="relative flex min-h-[calc(100svh-4rem)] items-center overflow-hidden border-b border-slate-200/70 py-16 sm:py-20 lg:py-24"
       ref={sectionRef}
     >
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_75%_24%,rgba(125,211,252,0.22),transparent_32%),radial-gradient(circle_at_12%_78%,rgba(186,230,253,0.34),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)]" />
-      <div className="ambient-orb absolute -top-40 right-[5%] -z-10 size-[32rem] rounded-full bg-cyan-200/25 blur-3xl" />
-      <div className="ambient-orb ambient-orb-delayed absolute -bottom-48 -left-32 -z-10 size-[28rem] rounded-full bg-blue-200/25 blur-3xl" />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(15,23,42,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.025)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_78%)]" />
+      <div className="absolute inset-0 -z-20 bg-white" />
+      <div className="absolute inset-y-0 left-0 -z-10 w-[58%] bg-[radial-gradient(circle_at_18%_34%,rgba(191,219,254,0.68),transparent_44%),linear-gradient(90deg,rgba(239,246,255,0.9),transparent)]" />
+      <div className="ambient-orb absolute -top-56 -left-44 -z-10 size-[34rem] rounded-full bg-blue-200/30 blur-3xl" />
 
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-20">
-          <div>
+        <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(17rem,0.6fr)] lg:gap-20">
+          <div className="relative z-10">
             <motion.p
               animate={animate}
-              className="font-mono text-sm font-semibold tracking-[0.18em] text-cyan-700 uppercase"
+              className="text-4xl font-semibold tracking-[-0.04em] text-slate-700 sm:text-5xl"
               initial={initial}
               variants={entrance}
-              transition={transition(0.05)}
+              transition={transition(0.04)}
             >
-              AI Application Engineer
+              你好 <span aria-hidden="true">👋</span>
             </motion.p>
+
             <motion.h1
               animate={animate}
-              className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.055em] text-balance text-slate-950 sm:text-7xl lg:text-8xl"
+              className="mt-8 flex flex-wrap items-baseline gap-x-8 gap-y-2 text-5xl font-bold tracking-[-0.065em] text-slate-950 sm:gap-x-10 sm:text-7xl lg:text-[5.75rem] lg:leading-none"
               initial={initial}
               variants={entrance}
-              transition={transition(0.14)}
+              transition={transition(0.13)}
             >
-              {site.name}
-              <span className="mt-3 block bg-gradient-to-r from-slate-400 via-slate-600 to-cyan-700 bg-clip-text text-transparent">
-                {site.role}
+              <span>我是</span>
+              <span className="inline-block bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 bg-clip-text pr-2 tracking-[-0.035em] text-transparent">
+                {site.name}
               </span>
             </motion.h1>
-            <motion.p
-              animate={animate}
-              className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl"
-              initial={initial}
-              variants={entrance}
-              transition={transition(0.23)}
-            >
-              {site.description}
-            </motion.p>
+
             <motion.div
               animate={animate}
-              className="mt-10 flex flex-wrap gap-4"
+              className="mt-9"
               initial={initial}
               variants={entrance}
-              transition={transition(0.32)}
+              transition={transition(0.22)}
             >
-              <Link
-                className="group relative overflow-hidden rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-slate-950/15 outline-none transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-4"
-                href="/#projects"
-              >
-                <span className="relative z-10">查看项目</span>
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              </Link>
+              <p className="font-yahei text-base font-semibold tracking-wide text-slate-700 sm:text-lg">
+                {site.role}
+              </p>
+              <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                {site.description}
+              </p>
+            </motion.div>
+
+            <motion.div
+              animate={animate}
+              className="mt-9 flex flex-wrap gap-3"
+              initial={initial}
+              variants={entrance}
+              transition={transition(0.31)}
+            >
               <a
-                className="rounded-full border border-slate-300/80 bg-white/70 px-6 py-3 text-sm font-medium text-slate-800 shadow-sm outline-none backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-4"
-                href={site.resumeUrl}
-                rel="noreferrer"
-                target="_blank"
-              >
-                查看简历
-              </a>
-              <a
-                className="rounded-full border border-slate-300/80 bg-white/70 px-6 py-3 text-sm font-medium text-slate-800 shadow-sm outline-none backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-4"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-blue-700 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-700/20 outline-none transition duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-700/25 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4"
                 href={site.githubUrl}
                 rel="noreferrer"
                 target="_blank"
               >
-                GitHub
+                <span className="relative z-10">GitHub 主页</span>
+                <span className="relative z-10" aria-hidden="true">↗</span>
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               </a>
+              <Link
+                className="inline-flex items-center rounded-lg border border-slate-200 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm outline-none backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-white hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4"
+                href="/#contact"
+              >
+                联系我
+              </Link>
+            </motion.div>
+
+            <motion.div
+              animate={animate}
+              className="mt-8 flex items-center gap-5 text-slate-600"
+              initial={initial}
+              variants={entrance}
+              transition={transition(0.39)}
+            >
+              <a
+                aria-label="访问 GitHub"
+                className="rounded-md outline-none transition duration-300 hover:-translate-y-1 hover:text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4"
+                href={site.githubUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <svg aria-hidden="true" className="size-7" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.74-1.55-2.57-.3-5.27-1.29-5.27-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.71 5.39-5.29 5.68.42.36.79 1.06.79 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" />
+                </svg>
+              </a>
+              <a
+                aria-label="查看 PDF 简历"
+                className="rounded-md outline-none transition duration-300 hover:-translate-y-1 hover:text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4"
+                href={site.resumeUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <svg aria-hidden="true" className="size-7" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                  <path d="M6.75 2.75h7.1L19.25 8v13.25H6.75z" strokeLinejoin="round" />
+                  <path d="M13.5 2.75V8h5.75M9.5 13h7M9.5 16.5h5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <Link
+                aria-label="前往联系区域"
+                className="rounded-md outline-none transition duration-300 hover:-translate-y-1 hover:text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4"
+                href="/#contact"
+              >
+                <svg aria-hidden="true" className="size-7" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                  <rect height="15" rx="2" width="19" x="2.5" y="4.5" />
+                  <path d="m4.5 7 7.5 6 7.5-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
             </motion.div>
           </div>
 
           <motion.div
             animate={animate}
-            className="mx-auto w-full max-w-72 lg:max-w-none"
+            className="relative mx-auto w-full max-w-72 sm:max-w-80 lg:max-w-none"
             initial={initial}
-            style={
-              shouldReduceMotion
-                ? undefined
-                : { y: portraitY, scale: portraitScale }
-            }
+            style={shouldReduceMotion ? undefined : { y: portraitY, scale: portraitScale }}
             variants={entrance}
-            transition={transition(0.2)}
+            transition={transition(0.18)}
           >
-            <div className="glass-highlight group relative aspect-[4/5] overflow-hidden rounded-[2.25rem] border border-white/80 bg-white/70 p-2 shadow-[0_30px_90px_rgba(15,23,42,0.18)] ring-1 ring-slate-200/70 backdrop-blur-xl">
-              <div className="relative size-full overflow-hidden rounded-[1.8rem] bg-slate-100">
+            <div className="absolute inset-2 rotate-3 rounded-[2.25rem] border border-slate-200 bg-white/55 shadow-xl shadow-slate-900/5" />
+            <div className="glass-highlight group relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/90 bg-white/75 p-2.5 shadow-[0_30px_90px_rgba(15,23,42,0.16)] ring-1 ring-slate-200/70 backdrop-blur-xl">
+              <div className="relative size-full overflow-hidden rounded-[1.55rem] bg-slate-100">
                 <Image
                   fill
                   priority

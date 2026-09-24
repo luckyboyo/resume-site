@@ -27,6 +27,10 @@
   }
 }
 
+.font-yahei {
+  font-family: "Microsoft YaHei", "Microsoft YaHei UI", "PingFang SC", "Noto Sans SC", sans-serif;
+}
+
 @keyframes ambient-drift {
   0%,
   100% {

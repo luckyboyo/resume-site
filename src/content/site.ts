@@ -1,6 +1,6 @@
 export const site = {
   name: "方子悦",
-  role: "AI 应用开发 · RAG & Agent 工程",
+  role: "AI  /  Agent 工程师",
   description:
     "专注于检索增强生成、多智能体工作流与 AI 应用工程化，关注从原型验证到可维护系统的完整实现。",
   githubUrl: "https://github.com/luckyboyo",
