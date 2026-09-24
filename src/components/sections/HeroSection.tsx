@@ -40,7 +40,7 @@ export function HeroSection() {
       <div className="ambient-orb absolute -top-56 -left-44 -z-10 size-[34rem] rounded-full bg-blue-200/30 blur-3xl" />
 
       <Container>
-        <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(17rem,0.6fr)] lg:gap-20">
+        <div className="relative grid items-center gap-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(17rem,0.6fr)] lg:gap-20">
           <div className="relative z-10">
             <motion.p
               animate={animate}
@@ -54,7 +54,7 @@ export function HeroSection() {
 
             <motion.h1
               animate={animate}
-              className="mt-8 flex flex-wrap items-baseline gap-x-8 gap-y-2 text-5xl font-bold tracking-[-0.065em] text-slate-950 sm:gap-x-10 sm:text-7xl lg:text-[5.75rem] lg:leading-none"
+              className="mt-8 flex flex-wrap items-baseline gap-x-8 gap-y-2 pr-24 text-5xl font-bold tracking-[-0.065em] text-slate-950 sm:gap-x-10 sm:pr-36 sm:text-7xl md:pr-44 lg:pr-0 lg:text-[5.75rem] lg:leading-none"
               initial={initial}
               variants={entrance}
               transition={transition(0.13)}
@@ -150,15 +150,15 @@ export function HeroSection() {
 
           <motion.div
             animate={animate}
-            className="relative mx-auto w-full max-w-72 sm:max-w-80 lg:max-w-none"
+            className="absolute top-20 right-0 w-20 sm:top-24 sm:w-28 md:w-36 lg:relative lg:top-auto lg:right-auto lg:mx-auto lg:w-full lg:max-w-none"
             initial={initial}
             style={shouldReduceMotion ? undefined : { y: portraitY, scale: portraitScale }}
             variants={entrance}
             transition={transition(0.18)}
           >
-            <div className="absolute inset-2 rotate-3 rounded-[2.25rem] border border-slate-200 bg-white/55 shadow-xl shadow-slate-900/5" />
-            <div className="glass-highlight group relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/90 bg-white/75 p-2.5 shadow-[0_30px_90px_rgba(15,23,42,0.16)] ring-1 ring-slate-200/70 backdrop-blur-xl">
-              <div className="relative size-full overflow-hidden rounded-[1.55rem] bg-slate-100">
+            <div className="absolute inset-2 rotate-3 rounded-xl border border-slate-200 bg-white/55 shadow-xl shadow-slate-900/5" />
+            <div className="glass-highlight group relative aspect-[4/5] overflow-hidden rounded-xl border border-white/90 bg-white/75 p-2.5 shadow-[0_30px_90px_rgba(15,23,42,0.16)] ring-1 ring-slate-200/70 backdrop-blur-xl">
+              <div className="relative size-full overflow-hidden rounded-xl bg-slate-100">
                 <Image
                   fill
                   priority
