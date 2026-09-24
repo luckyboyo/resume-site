@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# resume-site
 
-## Getting Started
+方子悦的个人简历与项目作品集。项目使用 Next.js、TypeScript 和 Tailwind CSS 构建，并通过静态导出部署到 Nginx。
 
-First, run the development server:
+## 本地开发
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+浏览器访问 `http://localhost:3000`。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 质量检查
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
 
-## Learn More
+`npm run build` 会在 `out/` 目录生成可由 Nginx直接托管的静态文件。
 
-To learn more about Next.js, take a look at the following resources:
+## 主要目录
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+src/
+├─ app/          # 页面、路由、全局布局与样式
+├─ components/   # 布局、页面区块和通用 UI 组件
+├─ content/      # 教育、经历、项目和技能数据
+└─ types/        # 内容数据的 TypeScript 类型
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+项目详情页由 `src/app/projects/[slug]/page.tsx` 统一生成，项目数据集中维护在 `src/content/projects.ts`。
 
-## Deploy on Vercel
+## 当前静态路由
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `/`
+- `/projects/langgraph-software-agent/`
+- `/projects/rag-knowledge-base/`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 隐私约定
+
+公开源码中不保存手机号、私人邮箱或原始简历文件。需要公开简历 PDF 时，应先生成单独的脱敏版本。
