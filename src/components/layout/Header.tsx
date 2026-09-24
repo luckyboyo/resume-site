@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-slate-50/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/60 bg-white/72 shadow-[0_1px_0_rgba(15,23,42,0.04)] backdrop-blur-2xl supports-[backdrop-filter]:bg-white/64">
       <Container className="flex min-h-16 items-center justify-between gap-6">
         <Link
           className="font-semibold tracking-tight text-slate-950 outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-4"

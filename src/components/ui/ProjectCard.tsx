@@ -9,7 +9,11 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
-    <article className="group flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl hover:shadow-cyan-950/5 sm:p-8">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-[0_18px_55px_rgba(15,23,42,0.06)] transition duration-500 hover:-translate-y-1.5 hover:border-cyan-200/80 hover:shadow-[0_28px_80px_rgba(8,145,178,0.12)] sm:p-8">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-32 -right-32 size-72 rounded-full bg-cyan-200/0 blur-3xl transition duration-700 group-hover:bg-cyan-200/45"
+      />
       <div className="flex items-center justify-between gap-4 font-mono text-xs text-slate-500">
         <span>{project.category}</span>
         <span aria-hidden="true">0{index + 1}</span>
@@ -24,7 +28,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         ))}
       </div>
       <Link
-        className="mt-8 inline-flex w-fit items-center gap-2 font-medium text-cyan-800 outline-none transition group-hover:gap-3 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-4"
+        className="relative mt-8 inline-flex w-fit items-center gap-2 font-medium text-cyan-800 outline-none transition-all duration-300 group-hover:gap-3 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-4"
         href={`/projects/${project.slug}`}
       >
         查看项目详情

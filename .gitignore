@@ -12,6 +12,11 @@
 
 # testing
 /coverage
+/.playwright/
+/.playwright-browsers/
+
+# local package cache used by sandboxed tooling
+/.npm-cache/
 
 # next.js
 /.next/
