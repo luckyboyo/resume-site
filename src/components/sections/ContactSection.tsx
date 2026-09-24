@@ -14,17 +14,26 @@ export function ContactSection() {
               对项目或技术交流感兴趣？
             </h2>
             <p className="mt-5 leading-8 text-slate-600">
-              当前公开联系方式仅保留 GitHub；邮箱和简历下载将在确认公开版本后补充。
+              可以通过 GitHub 了解我的代码，也可以查看或下载完整 PDF 简历。
             </p>
           </div>
-          <a
-            className="mt-8 inline-flex rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white outline-none transition hover:bg-cyan-800 focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-4 lg:mt-0"
-            href={site.githubUrl}
-            rel="noreferrer"
-            target="_blank"
-          >
-            访问 GitHub
-          </a>
+          <div className="mt-8 flex flex-wrap gap-3 lg:mt-0 lg:justify-end">
+            <a
+              className="inline-flex rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white outline-none transition hover:bg-cyan-800 focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-4"
+              href={site.resumeUrl}
+              download
+            >
+              下载 PDF 简历
+            </a>
+            <a
+              className="inline-flex rounded-full border border-cyan-200 bg-white px-6 py-3 text-sm font-medium text-slate-800 outline-none transition hover:border-cyan-300 hover:bg-cyan-100 focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-4"
+              href={site.githubUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              访问 GitHub
+            </a>
+          </div>
         </div>
       </Container>
     </section>
