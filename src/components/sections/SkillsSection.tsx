@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function SkillsSection() {
   return (
-    <section className="border-y border-slate-200 bg-slate-950 py-20 text-white sm:py-28" id="skills">
+    <section className="scroll-mt-16 border-y border-slate-200 bg-slate-950 py-20 text-white sm:py-28" id="skills">
       <Container>
         <Reveal>
           <SectionHeading
@@ -15,24 +15,27 @@ export function SkillsSection() {
             tone="dark"
           />
         </Reveal>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-2">
+        <div className="mt-10 grid gap-3 sm:mt-14 sm:grid-cols-2 sm:gap-4">
           {skillGroups.map((group, index) => (
-            <Reveal delay={index * 0.06} key={group.label}>
-            <article className="group h-full bg-slate-950 p-6 transition duration-500 hover:bg-slate-900 sm:p-8">
-              <h3 className="font-mono text-sm font-semibold text-cyan-300">
-                {group.label}
-              </h3>
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {group.skills.map((skill) => (
-                  <li
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-300"
-                    key={skill}
-                  >
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </article>
+            <Reveal className="h-full" delay={index * 0.06} key={group.label}>
+              <article className="group h-full rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:border-cyan-300/30 hover:bg-white/[0.07] sm:p-8">
+                <div className="flex items-center gap-3">
+                  <span className="h-px w-7 bg-cyan-300/80 transition-all duration-300 group-hover:w-10" />
+                  <h3 className="font-mono text-sm font-semibold text-cyan-200">
+                    {group.label}
+                  </h3>
+                </div>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <li
+                      className="rounded-full border border-white/10 bg-slate-900/70 px-3 py-1.5 text-sm text-slate-300 transition-colors group-hover:border-white/15"
+                      key={skill}
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </article>
             </Reveal>
           ))}
         </div>

@@ -15,10 +15,10 @@ export function SectionHeading({
 
   return (
     <div className="max-w-3xl">
-      <p className={`font-mono text-xs font-semibold tracking-[0.2em] uppercase ${isDark ? "text-cyan-300" : "text-cyan-700"}`}>
+      <p className={`font-mono text-xs font-semibold tracking-[0.2em] uppercase ${isDark ? "text-cyan-300" : "text-blue-700"}`}>
         {eyebrow}
       </p>
-      <h2 className={`mt-3 text-3xl font-semibold tracking-tight sm:text-4xl ${isDark ? "text-white" : "text-slate-950"}`}>
+      <h2 className={`mt-3 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl ${isDark ? "text-white" : "text-slate-950"}`}>
         {title}
       </h2>
       {description ? (

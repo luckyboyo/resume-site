@@ -7,7 +7,7 @@ import { SkillsSection } from "@/components/sections/SkillsSection";
 
 export default function Home() {
   return (
-    <main>
+    <main id="top">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
