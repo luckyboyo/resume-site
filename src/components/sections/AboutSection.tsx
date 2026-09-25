@@ -70,7 +70,7 @@ export function AboutSection() {
                       />
                       <div
                         aria-hidden="true"
-                        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white via-white/75 to-transparent lg:w-36"
+                        className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-36 bg-gradient-to-r from-white via-white/75 to-transparent lg:block"
                       />
                     </div>
                   </div>
