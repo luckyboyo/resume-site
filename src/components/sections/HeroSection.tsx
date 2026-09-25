@@ -38,9 +38,10 @@ export function HeroSection() {
       <div className="absolute inset-0 -z-20 bg-white" />
       <div className="absolute inset-y-0 left-0 -z-10 w-[58%] bg-[radial-gradient(circle_at_18%_34%,rgba(191,219,254,0.68),transparent_44%),linear-gradient(90deg,rgba(239,246,255,0.9),transparent)]" />
       <div className="ambient-orb absolute -top-56 -left-44 -z-10 size-[34rem] rounded-full bg-blue-200/30 blur-3xl" />
+      <div aria-hidden="true" className="hero-linework pointer-events-none absolute inset-0 z-0" />
 
       <Container>
-        <div className="relative grid items-center gap-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(17rem,0.6fr)] lg:gap-20">
+        <div className="relative z-10 grid items-center gap-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)] lg:gap-12">
           <div className="relative z-10">
             <motion.p
               animate={animate}
@@ -150,19 +151,19 @@ export function HeroSection() {
 
           <motion.div
             animate={animate}
-            className="absolute top-20 right-0 w-20 sm:top-24 sm:w-28 md:w-36 lg:relative lg:top-auto lg:right-auto lg:mx-auto lg:w-full lg:max-w-none"
+            className="absolute top-20 right-0 w-24 sm:top-24 sm:w-32 md:w-40 lg:relative lg:top-auto lg:right-auto lg:mx-auto lg:w-full lg:max-w-sm"
             initial={initial}
             style={shouldReduceMotion ? undefined : { y: portraitY, scale: portraitScale }}
             variants={entrance}
             transition={transition(0.18)}
           >
             <div className="absolute inset-2 hidden rotate-3 rounded-xl border border-slate-200 bg-white/55 shadow-xl shadow-slate-900/5 lg:block" />
-            <div className="glass-highlight group relative aspect-square overflow-hidden rounded-lg border border-slate-200/80 bg-white p-1 shadow-[0_10px_28px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70 lg:rounded-xl lg:border-white/90 lg:bg-white/75 lg:p-1 lg:shadow-[0_30px_90px_rgba(15,23,42,0.16)] lg:backdrop-blur-xl">
+            <div className="glass-highlight group relative aspect-square overflow-hidden rounded-lg border border-slate-200/80 bg-white p-1 shadow-[0_10px_28px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70 lg:rounded-xl lg:border-white/90 lg:bg-white/75 lg:p-0.5 lg:shadow-[0_30px_90px_rgba(15,23,42,0.16)] lg:backdrop-blur-xl">
               <div className="relative size-full overflow-hidden rounded-md bg-slate-100 lg:rounded-xl">
                 <Image
                   fill
                   priority
-                  sizes="(min-width: 1024px) 320px, 288px"
+                  sizes="(min-width: 1024px) 420px, (min-width: 768px) 160px, 128px"
                   className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.025]"
                   src={site.profileImageUrl}
                   alt={`${site.name}的证件照`}
