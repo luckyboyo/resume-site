@@ -4,6 +4,8 @@ export type EducationItem = {
   location: string;
   period: string;
   detail?: string;
+  image?: string;
+  logo?: string;
 };
 
 export type ExperienceItem = {

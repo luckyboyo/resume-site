@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/content/site";
@@ -98,12 +97,12 @@ export function HeroSection() {
                 <span className="relative z-10" aria-hidden="true">↗</span>
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               </a>
-              <Link
+              <a
                 className="inline-flex items-center rounded-lg border border-slate-200 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm outline-none backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-white hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4"
-                href="/#contact"
+                href={`mailto:${site.email}`}
               >
                 联系我
-              </Link>
+              </a>
             </motion.div>
 
             <motion.div
@@ -136,16 +135,16 @@ export function HeroSection() {
                   <path d="M13.5 2.75V8h5.75M9.5 13h7M9.5 16.5h5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
-              <Link
-                aria-label="前往联系区域"
+              <a
+                aria-label={`发送邮件到 ${site.email}`}
                 className="rounded-md outline-none transition duration-300 hover:-translate-y-1 hover:text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4"
-                href="/#contact"
+                href={`mailto:${site.email}`}
               >
                 <svg aria-hidden="true" className="size-7" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                   <rect height="15" rx="2" width="19" x="2.5" y="4.5" />
                   <path d="m4.5 7 7.5 6 7.5-6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </Link>
+              </a>
             </motion.div>
           </div>
 
