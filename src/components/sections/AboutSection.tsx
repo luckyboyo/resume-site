@@ -27,9 +27,16 @@ export function AboutSection() {
                   <div className="grid h-full lg:grid-cols-[minmax(19rem,0.82fr)_minmax(0,1.18fr)]">
                     <div className="relative z-10 flex items-center bg-white px-4 py-6 sm:px-6 sm:py-8 lg:bg-gradient-to-r lg:from-white lg:via-white lg:to-slate-50/70 lg:px-8 lg:py-10">
                       <div className="min-w-0">
-                        <p className="mb-3 inline-flex rounded-full bg-slate-100 px-3 py-1.5 text-sm text-slate-500">
-                          {item.location}
-                        </p>
+                        <div className="mb-3 flex flex-wrap gap-2">
+                          <span className="inline-flex rounded-full bg-slate-100 px-3 py-1.5 text-sm text-slate-500">
+                            {item.location}
+                          </span>
+                          {item.tags?.map((tag) => (
+                            <span className="inline-flex rounded-full bg-slate-100 px-3 py-1.5 text-sm text-slate-500" key={tag}>
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                         <p className="font-mono text-sm tracking-wider text-blue-700 uppercase">
                           {item.period}
                         </p>
@@ -80,9 +87,16 @@ export function AboutSection() {
                       <p className="font-mono text-xs tracking-wider text-blue-700 uppercase">
                         {item.period}
                       </p>
-                      <p className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">
-                        {item.location}
-                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">
+                          {item.location}
+                        </span>
+                        {item.tags?.map((tag) => (
+                          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500" key={tag}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                     <h3 className="mt-7 text-2xl font-semibold tracking-tight text-slate-950 transition-colors group-hover:text-blue-800 sm:text-3xl">
                       {item.institution}

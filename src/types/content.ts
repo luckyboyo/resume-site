@@ -4,6 +4,7 @@ export type EducationItem = {
   location: string;
   period: string;
   detail?: string;
+  tags?: string[];
   image?: string;
   logo?: string;
 };
