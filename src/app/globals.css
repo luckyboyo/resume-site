@@ -42,6 +42,47 @@
     linear-gradient(0deg, transparent 88.95%, rgb(148 163 184 / 0.14) 89%, transparent 89.05%);
 }
 
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+    filter: blur(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-enter {
+  animation: hero-enter 0.78s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter-delay-1 {
+  animation-delay: 0.04s;
+}
+
+.hero-enter-delay-2 {
+  animation-delay: 0.13s;
+}
+
+.hero-enter-delay-portrait {
+  animation-delay: 0.18s;
+}
+
+.hero-enter-delay-3 {
+  animation-delay: 0.22s;
+}
+
+.hero-enter-delay-4 {
+  animation-delay: 0.31s;
+}
+
+.hero-enter-delay-5 {
+  animation-delay: 0.39s;
+}
+
 @media (max-width: 640px) {
   .hero-linework {
     opacity: 0.36;
